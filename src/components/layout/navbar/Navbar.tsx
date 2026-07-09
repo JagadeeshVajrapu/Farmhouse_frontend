@@ -91,19 +91,21 @@ export function Navbar() {
           style={{ originX: 0.5 }}
         />
 
-        <div className="mx-auto flex h-20 max-w-7xl items-center justify-between gap-3 px-4 sm:px-6 lg:px-8">
-          {/* Logo — always full size */}
-          <NavbarLogo className="shrink-0" />
+        <div className="mx-auto grid h-20 max-w-7xl grid-cols-[auto_1fr_auto] items-center gap-3 px-4 sm:gap-4 sm:px-6 lg:px-8">
+          {/* Logo */}
+          <NavbarLogo className="min-w-0 shrink-0" />
 
-          {/* Desktop Navigation */}
-          <nav className="hidden min-w-0 flex-1 items-center justify-center gap-4 xl:gap-7 lg:flex">
-            {navigation.map((link) => (
-              <NavItem key={link.href} link={link} onMegaOpen={handleMegaOpen} />
-            ))}
+          {/* Desktop Navigation — Home is the logo; omit here to avoid overlap */}
+          <nav className="hidden min-w-0 items-center justify-center gap-2 xl:gap-4 2xl:gap-5 lg:flex">
+            {navigation
+              .filter((link) => link.href !== '/')
+              .map((link) => (
+                <NavItem key={link.href} link={link} onMegaOpen={handleMegaOpen} />
+              ))}
           </nav>
 
-          {/* Desktop Actions — never shrink */}
-          <div className="hidden shrink-0 items-center gap-2 lg:flex lg:gap-2.5">
+          {/* Desktop Actions */}
+          <div className="hidden shrink-0 items-center justify-end gap-2 lg:flex lg:gap-3">
             <WhatsAppButton />
 
             {isAuthenticated && (user?.role === 'admin' || user?.role === 'staff') ? (

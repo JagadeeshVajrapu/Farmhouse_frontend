@@ -36,12 +36,12 @@ export function NavbarLogo({ compact = false, className, showText = true }: Navb
         />
       </div>
       {showText && !compact && (
-        <div className="hidden flex-col leading-tight xl:flex">
-          <span className="font-heading text-sm font-light uppercase tracking-wide text-foreground transition-colors group-hover:text-gold">
+        <div className="hidden min-w-[7.5rem] flex-col leading-tight 2xl:flex">
+          <span className="font-heading text-sm font-light uppercase tracking-[0.12em] text-foreground transition-colors group-hover:text-gold">
             VIDHAAN
           </span>
-          <span className="text-[9px] uppercase tracking-[0.28em] text-gold/90">
-            Farm House
+          <span className="text-[9px] uppercase tracking-[0.22em] text-gold/90">
+            FARM HOUSE
           </span>
         </div>
       )}

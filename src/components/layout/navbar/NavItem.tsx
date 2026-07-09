@@ -47,24 +47,17 @@ export function NavItem({ link, onMegaOpen }: NavItemProps) {
       <Link
         href={link.href}
         className={cn(
-          'group relative px-1 py-2 text-[11px] font-medium uppercase tracking-[0.18em] transition-colors duration-300',
+          'group relative shrink-0 whitespace-nowrap px-1.5 py-2 text-[10px] font-medium uppercase tracking-[0.14em] transition-colors duration-300 xl:text-[11px] xl:tracking-[0.16em]',
           isActive ? 'text-gold' : 'text-foreground/80 hover:text-gold'
         )}
       >
         {link.label}
         <span
           className={cn(
-            'absolute -bottom-0.5 left-0 h-px bg-gold transition-all duration-500 ease-out',
-            isActive ? 'w-full' : 'w-0 group-hover:w-full'
+            'absolute -bottom-0.5 left-1.5 right-1.5 h-px bg-gold transition-all duration-500 ease-out',
+            isActive ? 'opacity-100' : 'opacity-0 group-hover:opacity-100'
           )}
         />
-        {isActive && (
-          <motion.span
-            layoutId="nav-active-pill"
-            className="absolute -inset-x-3 -inset-y-1 -z-10 rounded-full bg-gold/5"
-            transition={{ type: 'spring', stiffness: 380, damping: 30 }}
-          />
-        )}
       </Link>
     );
   }
@@ -74,21 +67,21 @@ export function NavItem({ link, onMegaOpen }: NavItemProps) {
       <Link
         href={link.href}
         className={cn(
-          'group relative flex items-center gap-1 px-1 py-2 text-[11px] font-medium uppercase tracking-[0.18em] transition-colors duration-300',
+          'group relative flex shrink-0 items-center gap-1 whitespace-nowrap px-1.5 py-2 text-[10px] font-medium uppercase tracking-[0.14em] transition-colors duration-300 xl:text-[11px] xl:tracking-[0.16em]',
           isActive || isOpen ? 'text-gold' : 'text-foreground/80 hover:text-gold'
         )}
       >
         {link.label}
         <ChevronDown
           className={cn(
-            'h-3 w-3 transition-transform duration-300',
+            'h-3 w-3 shrink-0 transition-transform duration-300',
             isOpen && 'rotate-180'
           )}
         />
         <span
           className={cn(
-            'absolute -bottom-0.5 left-0 h-px bg-gold transition-all duration-500',
-            isActive || isOpen ? 'w-full' : 'w-0 group-hover:w-full'
+            'absolute -bottom-0.5 left-1.5 right-1.5 h-px bg-gold transition-all duration-500',
+            isActive || isOpen ? 'opacity-100' : 'opacity-0 group-hover:opacity-100'
           )}
         />
       </Link>
