@@ -1,0 +1,226 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+@import "shadcn/tailwind.css";
+
+@custom-variant dark (&:is(.dark *));
+
+/* ═══════════════════════════════════════════════════════════
+   VIDHAAN FARMHOUSE — Dark Luxury Design System
+   ═══════════════════════════════════════════════════════════ */
+
+@theme inline {
+  /* Typography */
+  --font-sans: var(--font-dm-sans);
+  --font-heading: var(--font-playfair);
+  --font-display: var(--font-cormorant);
+  --font-mono: ui-monospace, monospace;
+
+  /* Brand palette */
+  --color-obsidian: #0a0a0a;
+  --color-obsidian-light: #141414;
+  --color-charcoal: #1a1a1a;
+  --color-charcoal-light: #2a2a2a;
+  --color-slate: #3a3a3a;
+  --color-forest: #1a3c2e;
+  --color-forest-light: #234d3b;
+  --color-forest-muted: #2d5c47;
+  --color-gold: #b8954a;
+  --color-gold-light: #d4ad5a;
+  --color-gold-dark: #8f7038;
+  --color-champagne: #e8dcc8;
+  --color-cream: #faf8f5;
+  --color-cream-dark: #f0ebe3;
+  --color-ivory: #f5f0e8;
+
+  /* Semantic tokens */
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+
+  /* Radius scale */
+  --radius-sm: calc(var(--radius) * 0.6);
+  --radius-md: calc(var(--radius) * 0.8);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) * 1.4);
+  --radius-2xl: calc(var(--radius) * 1.8);
+  --radius-3xl: calc(var(--radius) * 2.2);
+  --radius-4xl: calc(var(--radius) * 2.6);
+}
+
+/* ─── Dark Luxury (Default) ─── */
+:root,
+.dark {
+  --background: #0a0a0a;
+  --foreground: #f5f0e8;
+  --card: #141414;
+  --card-foreground: #f5f0e8;
+  --popover: #1a1a1a;
+  --popover-foreground: #f5f0e8;
+  --primary: #b8954a;
+  --primary-foreground: #0a0a0a;
+  --secondary: #1a3c2e;
+  --secondary-foreground: #e8dcc8;
+  --muted: #1a1a1a;
+  --muted-foreground: #8a8a8a;
+  --accent: #b8954a;
+  --accent-foreground: #0a0a0a;
+  --destructive: #ef4444;
+  --border: rgba(184, 149, 74, 0.12);
+  --input: rgba(255, 255, 255, 0.08);
+  --ring: #b8954a;
+  --radius: 0.75rem;
+}
+
+/* ─── Light Mode (Optional) ─── */
+.light {
+  --background: #faf8f5;
+  --foreground: #1a1a1a;
+  --card: #ffffff;
+  --card-foreground: #1a1a1a;
+  --popover: #ffffff;
+  --popover-foreground: #1a1a1a;
+  --primary: #1a2e1a;
+  --primary-foreground: #faf8f5;
+  --secondary: #f0ebe3;
+  --secondary-foreground: #1a1a1a;
+  --muted: #f0ebe3;
+  --muted-foreground: #6b6b6b;
+  --accent: #b8954a;
+  --accent-foreground: #1a1a1a;
+  --destructive: #dc2626;
+  --border: #e8e2d9;
+  --input: #e8e2d9;
+  --ring: #b8954a;
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+
+  html {
+    scroll-behavior: smooth;
+    @apply font-sans;
+  }
+
+  body {
+    @apply bg-background text-foreground antialiased;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-playfair), Georgia, serif;
+    @apply font-light tracking-wide;
+  }
+}
+
+/* ─── Scrollbar ─── */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--background);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--color-gold-dark);
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--color-gold);
+}
+
+::selection {
+  background: rgba(201, 169, 98, 0.3);
+  color: var(--foreground);
+}
+
+/* ─── Utility classes ─── */
+.glass {
+  background: rgba(255, 255, 255, 0.04);
+  backdrop-filter: blur(24px);
+  -webkit-backdrop-filter: blur(24px);
+  border: 1px solid rgba(201, 169, 98, 0.15);
+}
+
+.glass-gold {
+  background: linear-gradient(135deg, rgba(201, 169, 98, 0.08) 0%, rgba(255, 255, 255, 0.02) 100%);
+  backdrop-filter: blur(20px);
+  border: 1px solid rgba(201, 169, 98, 0.2);
+}
+
+.gradient-overlay {
+  background: linear-gradient(
+    to bottom,
+    rgba(10, 10, 10, 0.2) 0%,
+    rgba(10, 10, 10, 0.55) 50%,
+    rgba(10, 10, 10, 0.92) 100%
+  );
+}
+
+.gradient-gold {
+  background: linear-gradient(135deg, #c9a962 0%, #d4bc7e 50%, #a88b4a 100%);
+}
+
+.gradient-radial-dark {
+  background: radial-gradient(ellipse at center, #1a2e1a 0%, #0a0a0a 70%);
+}
+
+.text-gradient-gold {
+  background: linear-gradient(135deg, #d4bc7e, #c9a962, #a88b4a);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.luxury-shadow {
+  box-shadow:
+    0 4px 24px rgba(0, 0, 0, 0.4),
+    0 0 0 1px rgba(201, 169, 98, 0.08);
+}
+
+.luxury-shadow-lg {
+  box-shadow:
+    0 8px 48px rgba(0, 0, 0, 0.5),
+    0 0 0 1px rgba(201, 169, 98, 0.12);
+}
+
+/* ─── Swiper overrides ─── */
+.swiper-pagination-bullet {
+  background: #c9a962 !important;
+  opacity: 0.3 !important;
+}
+
+.swiper-pagination-bullet-active {
+  opacity: 1 !important;
+  transform: scale(1.2);
+}
+
+/* ─── Navbar ─── */
+.navbar-glass {
+  background: rgba(10, 10, 10, 0.75);
+  backdrop-filter: blur(24px) saturate(150%);
+  -webkit-backdrop-filter: blur(24px) saturate(150%);
+}
+
+:focus-visible {
+  outline: 2px solid rgba(201, 169, 98, 0.5);
+  outline-offset: 2px;
+}
