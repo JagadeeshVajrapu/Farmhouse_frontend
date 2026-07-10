@@ -268,7 +268,7 @@ export function ContactForm() {
                         onChange={field.onChange}
                         isValid={isFieldValid('accommodation')}
                         error={errors.accommodation?.message}
-                        placeholder="Select accommodation (optional)"
+                        placeholder="Choose a stay"
                         options={CONTACT_ACCOMMODATIONS.map((a) => ({
                           value: a.value,
                           label: a.label,

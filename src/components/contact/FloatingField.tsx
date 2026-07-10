@@ -196,6 +196,8 @@ export function FloatingSelect({
 }: FloatingSelectProps) {
   const [focused, setFocused] = useState(false);
   const hasValue = !!value;
+  const hasPlaceholder = !!placeholder;
+  const labelFloated = focused || hasValue || hasPlaceholder;
   const errorId = id ? `${id}-error` : undefined;
 
   return (
@@ -210,8 +212,9 @@ export function FloatingSelect({
         aria-describedby={errorId}
         className={cn(
           fieldBase,
-          'appearance-none pb-3 pt-6',
-          !hasValue && 'text-transparent',
+          'appearance-none truncate pb-3 pt-6 pr-10',
+          !hasValue && !hasPlaceholder && 'text-transparent',
+          !hasValue && hasPlaceholder && 'text-[#0F172A]/55 dark:text-muted-foreground',
           error && fieldErrorStyles,
           isValid && !error && hasValue && fieldValidStyles
         )}
@@ -231,14 +234,19 @@ export function FloatingSelect({
         htmlFor={id}
         className={cn(
           'pointer-events-none absolute left-4 transition-all duration-300',
-          'text-[#0F172A]/50 dark:text-muted-foreground',
-          focused || hasValue
-            ? 'top-2 text-[10px] uppercase tracking-wider text-[#C9A227] dark:text-gold'
-            : 'top-1/2 -translate-y-1/2 text-sm'
+          labelFloated
+            ? 'top-2 text-[11px] uppercase tracking-wider text-[#C9A227] dark:text-gold'
+            : 'top-1/2 -translate-y-1/2 text-sm text-[#0F172A]/50 dark:text-muted-foreground'
         )}
       >
         {label}
       </label>
+      <span
+        aria-hidden
+        className="pointer-events-none absolute right-4 top-1/2 -translate-y-1/2 text-[#0F172A]/40 dark:text-muted-foreground"
+      >
+        ▾
+      </span>
       {error && errorId && <FieldError id={errorId} message={error} />}
     </div>
   );
