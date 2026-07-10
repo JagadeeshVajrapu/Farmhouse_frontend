@@ -12,7 +12,7 @@ export function Footer() {
       {/* Top gold line */}
       <div className="h-px bg-gradient-to-r from-transparent via-gold/30 to-transparent" />
 
-      <div className="mx-auto max-w-7xl px-6 py-20 lg:px-8 lg:py-28">
+      <div className="mx-auto max-w-7xl px-4 py-20 sm:px-6 lg:px-8 lg:py-28">
         <div className="grid gap-14 lg:grid-cols-12">
           {/* Brand */}
           <div className="lg:col-span-4">

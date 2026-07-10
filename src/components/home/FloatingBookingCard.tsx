@@ -36,7 +36,7 @@ export function FloatingBookingCard() {
       initial={{ opacity: 0, y: 60 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ delay: 1.4, duration: 1, ease: [0.22, 1, 0.36, 1] }}
-      className="absolute bottom-8 left-1/2 z-20 w-[calc(100%-2rem)] max-w-5xl -translate-x-1/2 px-4"
+      className="absolute bottom-8 left-1/2 z-20 hidden w-[calc(100%-2rem)] max-w-5xl -translate-x-1/2 px-4 md:block"
     >
       <GlassCard className="glass-gold overflow-hidden rounded-2xl p-1 shadow-[0_24px_80px_rgba(0,0,0,0.5)]">
         <div className="flex items-center gap-2 border-b border-gold/10 px-5 py-3">
@@ -49,7 +49,7 @@ export function FloatingBookingCard() {
         <div className="flex flex-col gap-0 md:flex-row md:items-stretch">
           {/* Check-in */}
           <div className="flex-1 border-b border-white/5 px-5 py-4 md:border-b-0 md:border-r">
-            <label className="mb-2 flex items-center gap-1.5 text-[9px] uppercase tracking-wider text-white/50">
+            <label className="mb-2 flex items-center gap-1.5 text-[10px] uppercase tracking-wider text-white/50 sm:text-[11px]">
               <Calendar className="h-3 w-3" />
               Arrival
             </label>
@@ -75,7 +75,7 @@ export function FloatingBookingCard() {
 
           {/* Check-out */}
           <div className="flex-1 border-b border-white/5 px-5 py-4 md:border-b-0 md:border-r">
-            <label className="mb-2 flex items-center gap-1.5 text-[9px] uppercase tracking-wider text-white/50">
+            <label className="mb-2 flex items-center gap-1.5 text-[10px] uppercase tracking-wider text-white/50 sm:text-[11px]">
               <Calendar className="h-3 w-3" />
               Departure
             </label>
@@ -101,7 +101,7 @@ export function FloatingBookingCard() {
 
           {/* Guests */}
           <div className="flex-1 px-5 py-4">
-            <label className="mb-2 flex items-center gap-1.5 text-[9px] uppercase tracking-wider text-white/50">
+            <label className="mb-2 flex items-center gap-1.5 text-[10px] uppercase tracking-wider text-white/50 sm:text-[11px]">
               <Users className="h-3 w-3" />
               Guests
             </label>
@@ -123,7 +123,7 @@ export function FloatingBookingCard() {
           <button
             onClick={handleBook}
             suppressHydrationWarning
-            className="group flex items-center justify-center gap-2 bg-gold px-8 py-5 text-xs font-medium uppercase tracking-widest text-[#0a0a0a] transition-all duration-300 hover:bg-gold-light md:rounded-r-xl"
+            className="group flex min-h-[52px] w-full items-center justify-center gap-2 bg-gold px-6 py-4 text-xs font-medium uppercase tracking-widest text-[#0a0a0a] transition-all duration-300 hover:bg-gold-light md:w-auto md:rounded-r-xl md:px-8 md:py-5"
           >
             <MessageCircle className="h-4 w-4 transition-transform group-hover:scale-110" />
             Book on WhatsApp

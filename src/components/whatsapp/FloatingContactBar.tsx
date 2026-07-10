@@ -6,6 +6,7 @@ import { Phone, MessageCircle } from 'lucide-react';
 import { buildWhatsAppUrl } from '@/lib/whatsapp';
 import { PHONE_TEL } from '@/lib/whatsapp';
 import { useScrollRevealFab } from '@/hooks/useScrollRevealFab';
+import { useMobileNavOpen } from '@/hooks/useMobileNavOpen';
 import { cn } from '@/lib/utils';
 
 interface FabTooltipProps {
@@ -44,17 +45,18 @@ function FabTooltip({ show, label, accent }: FabTooltipProps) {
 
 export function FloatingContactBar() {
   const visible = useScrollRevealFab();
+  const mobileNavOpen = useMobileNavOpen();
   const [hovered, setHovered] = useState<'call' | 'whatsapp' | null>(null);
 
   return (
     <AnimatePresence>
-      {visible && (
+      {visible && !mobileNavOpen && (
         <motion.div
           initial={{ opacity: 0, y: 24, scale: 0.85 }}
           animate={{ opacity: 1, y: 0, scale: 1 }}
           exit={{ opacity: 0, y: 24, scale: 0.85 }}
           transition={{ type: 'spring', stiffness: 400, damping: 28 }}
-          className="fixed bottom-5 right-5 z-[150] flex items-center gap-3 sm:bottom-8 sm:right-8 sm:gap-4"
+          className="safe-bottom-fab fixed z-[55] flex items-center gap-3 sm:gap-4"
         >
           {/* Call */}
           <div

@@ -12,7 +12,7 @@ import { contactApi } from '@/lib/api';
 import { CONTACT_EVENT_TYPES, CONTACT_ACCOMMODATIONS } from '@/lib/contact-data';
 import {
   contactFormSchema,
-  formatIndianPhone,
+  formatIndianMobileInput,
   normalizeIndianPhone,
   MESSAGE_MAX_LENGTH,
   type ContactFormValues,
@@ -77,7 +77,7 @@ export function ContactForm() {
 
   const onSubmit = async (data: ContactFormValues) => {
     try {
-      await contactApi.submit({
+      const res = await contactApi.submit({
         name: data.fullName,
         phone: normalizeIndianPhone(data.mobile),
         email: data.email,
@@ -90,6 +90,12 @@ export function ContactForm() {
       });
       reset();
       setShowSuccessModal(true);
+      if (res.data.emailSent === false) {
+        toast.message('Enquiry received', {
+          description:
+            'Your details were saved. If you do not hear back within 24 hours, please call or WhatsApp us.',
+        });
+      }
       window.scrollTo({ top: 0, behavior: 'smooth' });
     } catch (error: unknown) {
       const err = error as {
@@ -193,19 +199,29 @@ export function ContactForm() {
                     name="mobile"
                     control={control}
                     render={({ field }) => (
-                      <FloatingInput
-                        id="mobile"
-                        label="Mobile Number *"
-                        type="tel"
-                        inputMode="tel"
-                        autoComplete="tel"
-                        value={field.value}
-                        onChange={(e) => field.onChange(formatIndianPhone(e.target.value))}
-                        onBlur={field.onBlur}
-                        isValid={isFieldValid('mobile')}
-                        error={errors.mobile?.message}
-                        hint="10-digit Indian mobile"
-                      />
+                      <div className="relative">
+                        <span
+                          aria-hidden
+                          className="pointer-events-none absolute left-4 top-[2.35rem] z-10 text-sm font-medium text-[#0F172A]/60 dark:text-muted-foreground"
+                        >
+                          +91
+                        </span>
+                        <FloatingInput
+                          id="mobile"
+                          label="Mobile Number *"
+                          type="tel"
+                          inputMode="numeric"
+                          autoComplete="tel-national"
+                          maxLength={11}
+                          className="pl-12 tracking-wide"
+                          value={field.value}
+                          onChange={(e) => field.onChange(formatIndianMobileInput(e.target.value))}
+                          onBlur={field.onBlur}
+                          isValid={isFieldValid('mobile')}
+                          error={errors.mobile?.message}
+                          hint="10-digit number (e.g. 84477 90095)"
+                        />
+                      </div>
                     )}
                   />
                 </div>
@@ -252,6 +268,7 @@ export function ContactForm() {
                         onChange={field.onChange}
                         isValid={isFieldValid('accommodation')}
                         error={errors.accommodation?.message}
+                        placeholder="Select accommodation (optional)"
                         options={CONTACT_ACCOMMODATIONS.map((a) => ({
                           value: a.value,
                           label: a.label,
@@ -275,7 +292,7 @@ export function ContactForm() {
                             aria-describedby={errors.preferredDate ? 'preferredDate-error' : undefined}
                             className={cn(
                               fieldBase,
-                              'flex w-full items-center pb-3 pt-6 text-left text-sm',
+                              'flex w-full min-h-[52px] items-center pb-3 pt-6 text-left text-sm',
                               'text-[#0F172A] dark:text-foreground',
                               errors.preferredDate && fieldErrorStyles,
                               field.value && fieldValidStyles
@@ -284,15 +301,21 @@ export function ContactForm() {
                             {field.value ? format(field.value, 'dd MMM yyyy') : '\u00A0'}
                             <CalendarIcon className="ml-auto h-4 w-4 text-[#C9A227] dark:text-gold" aria-hidden />
                           </PopoverTrigger>
-                          <span className="pointer-events-none absolute left-4 top-2 text-[10px] uppercase tracking-wider text-[#C9A227] dark:text-gold">
+                          <span className="pointer-events-none absolute left-4 top-2 text-[11px] uppercase tracking-wider text-[#C9A227] dark:text-gold">
                             Preferred Date *
                           </span>
-                          <PopoverContent className="w-auto p-0" align="start">
+                          <PopoverContent className="w-auto max-w-[calc(100vw-2rem)] p-0" align="start">
                             <Calendar
                               mode="single"
                               selected={field.value}
                               onSelect={field.onChange}
-                              disabled={(date) => date < new Date()}
+                              disabled={(date) => {
+                                const today = new Date();
+                                today.setHours(0, 0, 0, 0);
+                                const check = new Date(date);
+                                check.setHours(0, 0, 0, 0);
+                                return check < today;
+                              }}
                             />
                           </PopoverContent>
                         </Popover>
@@ -308,19 +331,19 @@ export function ContactForm() {
                       </div>
                     )}
                   />
-                </div>
 
-                <FloatingInput
-                  id="guests"
-                  label="Number of Guests *"
-                  type="number"
-                  min={1}
-                  max={500}
-                  inputMode="numeric"
-                  isValid={isFieldValid('guests')}
-                  error={errors.guests?.message}
-                  {...register('guests', { valueAsNumber: true })}
-                />
+                  <FloatingInput
+                    id="guests"
+                    label="Number of Guests *"
+                    type="number"
+                    min={1}
+                    max={500}
+                    inputMode="numeric"
+                    isValid={isFieldValid('guests')}
+                    error={errors.guests?.message}
+                    {...register('guests', { valueAsNumber: true })}
+                  />
+                </div>
 
                 <FloatingTextarea
                   id="message"

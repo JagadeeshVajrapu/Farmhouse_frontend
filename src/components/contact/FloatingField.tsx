@@ -60,7 +60,7 @@ export const FloatingInput = forwardRef<HTMLInputElement, FloatingFieldProps>(
           }}
           className={cn(
             fieldBase,
-            'peer pb-3 pt-6',
+            'peer pb-3 pt-6 text-base sm:text-sm',
             error && fieldErrorStyles,
             isValid && !error && fieldValidStyles,
             className
@@ -73,7 +73,7 @@ export const FloatingInput = forwardRef<HTMLInputElement, FloatingFieldProps>(
             'pointer-events-none absolute left-4 transition-all duration-300',
             'text-[#0F172A]/50 dark:text-muted-foreground',
             'peer-placeholder-shown:top-1/2 peer-placeholder-shown:-translate-y-1/2 peer-placeholder-shown:text-sm',
-            'top-2 text-[10px] uppercase tracking-wider',
+            'top-2 text-[11px] uppercase tracking-wider',
             (focused || props.value) && 'top-2 text-[10px] text-[#C9A227] dark:text-gold',
             'peer-focus:top-2 peer-focus:text-[10px] peer-focus:text-[#C9A227] peer-focus:uppercase peer-focus:tracking-wider dark:peer-focus:text-gold'
           )}
@@ -181,6 +181,7 @@ interface FloatingSelectProps {
   onChange?: (value: string) => void;
   options: { value: string; label: string }[];
   id?: string;
+  placeholder?: string;
 }
 
 export function FloatingSelect({
@@ -191,6 +192,7 @@ export function FloatingSelect({
   onChange,
   options,
   id,
+  placeholder,
 }: FloatingSelectProps) {
   const [focused, setFocused] = useState(false);
   const hasValue = !!value;
@@ -214,7 +216,11 @@ export function FloatingSelect({
           isValid && !error && hasValue && fieldValidStyles
         )}
       >
-        <option value="" disabled hidden />
+        {placeholder ? (
+          <option value="">{placeholder}</option>
+        ) : (
+          <option value="" disabled hidden />
+        )}
         {options.map((opt) => (
           <option key={opt.value} value={opt.value}>
             {opt.label}

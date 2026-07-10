@@ -13,7 +13,7 @@ export function MarketingLayout({ children }: MarketingLayoutProps) {
   return (
     <>
       <Header />
-      <main className="min-h-screen">{children}</main>
+      <main className="min-h-screen pb-28 lg:pb-0">{children}</main>
       <Footer />
       <FloatingContactBar />
     </>

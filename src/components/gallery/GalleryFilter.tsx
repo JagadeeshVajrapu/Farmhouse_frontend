@@ -26,7 +26,7 @@ export function GalleryFilter({ active, counts, onChange, className }: GalleryFi
         className
       )}
     >
-      <div className="flex gap-2 overflow-x-auto pb-1 scrollbar-none">
+      <div className="flex gap-2 overflow-x-auto pb-1 scrollbar-none [-webkit-overflow-scrolling:touch]">
         {GALLERY_FILTERS.map((filter) => {
           const Icon = filterIcons[filter.id];
           const isActive = active === filter.id;

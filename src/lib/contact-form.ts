@@ -3,30 +3,27 @@ import { z } from 'zod';
 export const MESSAGE_MIN_LENGTH = 10;
 export const MESSAGE_MAX_LENGTH = 1000;
 
-/** Format Indian mobile: +91 XXXXX XXXXX */
-export function formatIndianPhone(value: string): string {
-  const digits = value.replace(/\D/g, '');
-  let local = digits;
+/** Keep only local 10-digit part and format as XXXXX XXXXX */
+export function formatIndianMobileInput(value: string): string {
+  let digits = value.replace(/\D/g, '');
 
-  if (local.startsWith('91') && local.length > 10) {
-    local = local.slice(2);
-  } else if (local.startsWith('0')) {
-    local = local.slice(1);
+  if (digits.startsWith('91') && digits.length > 10) {
+    digits = digits.slice(2);
+  } else if (digits.startsWith('0') && digits.length > 10) {
+    digits = digits.slice(1);
   }
 
-  local = local.slice(0, 10);
+  digits = digits.slice(0, 10);
 
-  if (!local) return '';
-  if (local.length <= 5) return `+91 ${local}`;
-  return `+91 ${local.slice(0, 5)} ${local.slice(5)}`;
+  if (!digits) return '';
+  if (digits.length <= 5) return digits;
+  return `${digits.slice(0, 5)} ${digits.slice(5)}`;
 }
 
-/** Normalize phone for API submission */
+/** Normalize for API: +91XXXXXXXXXX */
 export function normalizeIndianPhone(value: string): string {
-  const digits = value.replace(/\D/g, '');
-  if (digits.length === 10) return `+91${digits}`;
-  if (digits.startsWith('91') && digits.length === 12) return `+${digits}`;
-  return value.trim();
+  const digits = value.replace(/\D/g, '').slice(-10);
+  return `+91${digits}`;
 }
 
 const phoneSchema = z
@@ -34,10 +31,8 @@ const phoneSchema = z
   .min(1, 'Mobile number is required')
   .refine((val) => {
     const digits = val.replace(/\D/g, '');
-    const local =
-      digits.startsWith('91') && digits.length > 10 ? digits.slice(2) : digits.startsWith('0') ? digits.slice(1) : digits;
-    return local.length === 10 && /^[6-9]/.test(local);
-  }, 'Enter a valid 10-digit Indian mobile number');
+    return digits.length === 10 && /^[6-9]\d{9}$/.test(digits);
+  }, 'Enter a valid 10-digit Indian mobile number (starts with 6–9)');
 
 export const contactFormSchema = z.object({
   fullName: z
@@ -65,3 +60,10 @@ export const contactFormSchema = z.object({
 });
 
 export type ContactFormValues = z.infer<typeof contactFormSchema>;
+
+/** @deprecated Use formatIndianMobileInput */
+export function formatIndianPhone(value: string): string {
+  const local = formatIndianMobileInput(value);
+  if (!local) return '';
+  return `+91 ${local}`;
+}

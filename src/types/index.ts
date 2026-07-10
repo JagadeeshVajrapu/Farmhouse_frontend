@@ -79,6 +79,7 @@ export interface ApiResponse<T> {
   data?: T;
   message?: string;
   count?: number;
+  emailSent?: boolean;
 }
 
 export interface AuthResponse {

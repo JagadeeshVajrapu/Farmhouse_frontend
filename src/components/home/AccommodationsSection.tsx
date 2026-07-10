@@ -36,7 +36,7 @@ function PropertyCard({ property, index }: { property: Property; index: number }
             <h3 className="font-heading text-xl font-light text-white md:text-2xl">
               {property.name}
             </h3>
-            <div className="mt-3 flex items-center gap-4 text-xs text-white/70">
+            <div className="mt-3 flex flex-wrap items-center gap-x-4 gap-y-2 text-xs text-white/70">
               <span className="flex items-center gap-1">
                 <Bed className="h-3.5 w-3.5" />
                 {property.bedrooms} Beds

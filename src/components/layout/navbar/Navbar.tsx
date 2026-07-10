@@ -57,8 +57,10 @@ export function Navbar() {
   // Lock body scroll when mobile menu open
   useEffect(() => {
     document.body.style.overflow = isMobileOpen ? 'hidden' : '';
+    document.body.classList.toggle('mobile-nav-open', isMobileOpen);
     return () => {
       document.body.style.overflow = '';
+      document.body.classList.remove('mobile-nav-open');
     };
   }, [isMobileOpen]);
 
@@ -151,12 +153,12 @@ export function Navbar() {
           </div>
 
           {/* Mobile toggle */}
-          <div className="flex items-center gap-2 lg:hidden">
-            <WhatsAppButton />
+          <div className="flex items-center gap-2.5 lg:hidden">
+            <WhatsAppButton className="h-11 w-11" />
             <button
               onClick={() => setIsMobileOpen(true)}
               aria-label="Open menu"
-              className="flex h-10 w-10 items-center justify-center rounded-full border border-white/10 text-foreground transition-all duration-300 hover:border-gold/30 hover:text-gold"
+              className="flex h-11 w-11 items-center justify-center rounded-full border border-white/10 text-foreground transition-all duration-300 hover:border-gold/30 hover:text-gold"
             >
               <Menu className="h-5 w-5" />
             </button>

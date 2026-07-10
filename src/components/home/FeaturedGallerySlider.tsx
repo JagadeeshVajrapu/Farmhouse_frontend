@@ -46,22 +46,22 @@ export function FeaturedGallerySlider() {
             centeredSlides
             loop={false}
             rewind
-            slidesPerView={1.2}
-            spaceBetween={24}
+            slidesPerView={1}
+            spaceBetween={16}
             autoplay={{ delay: 4000, disableOnInteraction: false, pauseOnMouseEnter: true }}
             coverflowEffect={{
               rotate: 0,
               stretch: 0,
-              depth: 120,
-              modifier: 2.2,
+              depth: 80,
+              modifier: 1.8,
               slideShadows: false,
             }}
             navigation
             pagination={{ clickable: true }}
             breakpoints={{
-              640: { slidesPerView: 1.6 },
-              1024: { slidesPerView: 2.2 },
-              1280: { slidesPerView: 2.6 },
+              640: { slidesPerView: 1.4, spaceBetween: 20 },
+              1024: { slidesPerView: 2.2, spaceBetween: 24 },
+              1280: { slidesPerView: 2.6, spaceBetween: 24 },
             }}
             onSwiper={(swiper) => {
               swiperRef.current = swiper;

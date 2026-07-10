@@ -11,7 +11,7 @@ export function ContactFAQ() {
   const [openIndex, setOpenIndex] = useState<number | null>(0);
 
   return (
-    <section className="bg-[#FAFAF8] py-20 dark:bg-background lg:py-28" aria-labelledby="contact-faq-heading">
+    <section className="bg-[#FAFAF8] px-4 py-16 dark:bg-background sm:px-0 sm:py-20 lg:py-28" aria-labelledby="contact-faq-heading">
       <div className="mx-auto max-w-3xl px-6 lg:px-8">
         <div className="text-center">
           <p className="text-[11px] font-medium uppercase tracking-[0.35em] text-[#C9A227]">
@@ -49,7 +49,7 @@ export function ContactFAQ() {
                   <span className="font-heading text-base font-light text-[#0F172A] dark:text-foreground md:text-lg">
                     {item.question}
                   </span>
-                  <span className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full border border-[#C9A227]/25 text-[#C9A227]">
+                  <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full border border-[#C9A227]/25 text-[#C9A227]">
                     {isOpen ? <Minus className="h-4 w-4" /> : <Plus className="h-4 w-4" />}
                   </span>
                 </button>

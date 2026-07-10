@@ -35,7 +35,7 @@ export function WhatsAppButton({ variant = 'icon', className }: WhatsAppButtonPr
       rel="noopener noreferrer"
       aria-label="Chat on WhatsApp"
       className={cn(
-        'group relative flex h-10 w-10 items-center justify-center rounded-full border border-emerald-500/25 bg-emerald-500/10 text-emerald-400 transition-all duration-300 hover:border-emerald-400/50 hover:bg-emerald-500/20 hover:shadow-[0_0_20px_rgba(16,185,129,0.2)]',
+        'group relative flex h-11 w-11 items-center justify-center rounded-full border border-emerald-500/25 bg-emerald-500/10 text-emerald-400 transition-all duration-300 hover:border-emerald-400/50 hover:bg-emerald-500/20 hover:shadow-[0_0_20px_rgba(16,185,129,0.2)]',
         className
       )}
     >
