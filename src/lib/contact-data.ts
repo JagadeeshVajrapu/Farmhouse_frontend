@@ -52,7 +52,7 @@ export const CONTACT_CARDS = [
     label: 'Location',
     value: contactConfig.address,
     href: `https://maps.google.com/?q=${encodeURIComponent(contactConfig.address)}`,
-    description: 'Chhatarpur, New Delhi',
+    description: 'Noida Sector-134, Uttar Pradesh',
   },
 ] as const;
 

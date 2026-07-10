@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-07-10T02:32:58.182Z",
+  "generatedAt": "2026-07-10T05:58:01.393Z",
   "version": 1,
   "items": [
     {
@@ -37,23 +37,41 @@
       "height": 800
     },
     {
-      "id": "estate-tour-01",
+      "id": "event-highlights-01",
       "type": "video",
-      "src": "/media/images/hero-estate-01.jpeg",
-      "videoSrc": "/media/videos/estate-tour-01.mp4",
-      "title": "Estate Tour 01",
-      "alt": "Vidhaan Farm House video — Estate Tour 01",
+      "src": "/media/images/pool-party-01.jpeg",
+      "videoSrc": "/media/videos/event-highlights-01.mp4",
+      "title": "Farmhouse Highlights Film",
+      "alt": "Vidhaan Farm House — complete highlights film",
       "tags": [
-        "hero",
         "videos",
-        "estate",
-        "drone"
+        "hero",
+        "events",
+        "party",
+        "pool"
       ],
       "gallery": "videos",
       "featured": true,
       "score": 100,
       "width": 1920,
       "height": 1080
+    },
+    {
+      "id": "entrance-gate-02",
+      "type": "image",
+      "src": "/media/images/entrance-gate-02.png",
+      "title": "Main Entrance & Parking",
+      "alt": "Vidhaan Farm House — main entrance gate with secure parking area",
+      "tags": [
+        "entrance",
+        "parking",
+        "hero"
+      ],
+      "gallery": "garden",
+      "featured": true,
+      "score": 98,
+      "width": 1200,
+      "height": 800
     },
     {
       "id": "pool-villa-01",
@@ -104,6 +122,24 @@
       "height": 800
     },
     {
+      "id": "property-walk-01",
+      "type": "video",
+      "src": "/media/images/lawn-01.jpeg",
+      "videoSrc": "/media/videos/property-walk-01.mp4",
+      "title": "Property Walkthrough",
+      "alt": "Vidhaan Farm House — full property walkthrough",
+      "tags": [
+        "videos",
+        "estate",
+        "garden"
+      ],
+      "gallery": "videos",
+      "featured": true,
+      "score": 94,
+      "width": 1920,
+      "height": 1080
+    },
+    {
       "id": "entrance-villa-01",
       "type": "image",
       "src": "/media/images/entrance-villa-01.jpeg",
@@ -139,6 +175,23 @@
       "height": 800
     },
     {
+      "id": "pool-tour-01",
+      "type": "video",
+      "src": "/media/images/pool-villa-01.jpeg",
+      "videoSrc": "/media/videos/pool-tour-01.mp4",
+      "title": "Swimming Pool Tour",
+      "alt": "Vidhaan Farm House — swimming pool tour",
+      "tags": [
+        "videos",
+        "pool"
+      ],
+      "gallery": "videos",
+      "featured": true,
+      "score": 92,
+      "width": 1920,
+      "height": 1080
+    },
+    {
       "id": "pool-premium-01",
       "type": "image",
       "src": "/media/images/pool-premium-01.jpeg",
@@ -155,18 +208,20 @@
       "height": 800
     },
     {
-      "id": "pool-tour-01",
+      "id": "estate-tour-01",
       "type": "video",
-      "src": "/media/images/hero-estate-01.jpeg",
-      "videoSrc": "/media/videos/pool-tour-01.mp4",
-      "title": "Pool Tour 01",
-      "alt": "Vidhaan Farm House video — Pool Tour 01",
+      "src": "/media/images/hero-estate-02.jpeg",
+      "videoSrc": "/media/videos/estate-tour-01.mp4",
+      "title": "Estate Aerial Preview",
+      "alt": "Vidhaan Farm House — aerial estate preview",
       "tags": [
         "videos",
-        "pool"
+        "estate",
+        "drone",
+        "hero"
       ],
       "gallery": "videos",
-      "featured": false,
+      "featured": true,
       "score": 90,
       "width": 1920,
       "height": 1080
@@ -187,25 +242,6 @@
       "score": 88,
       "width": 1200,
       "height": 800
-    },
-    {
-      "id": "event-highlights-01",
-      "type": "video",
-      "src": "/media/images/hero-estate-01.jpeg",
-      "videoSrc": "/media/videos/event-highlights-01.mp4",
-      "title": "Event Highlights 01",
-      "alt": "Vidhaan Farm House video — Event Highlights 01",
-      "tags": [
-        "videos",
-        "events",
-        "party",
-        "night"
-      ],
-      "gallery": "videos",
-      "featured": false,
-      "score": 88,
-      "width": 1920,
-      "height": 1080
     },
     {
       "id": "lawn-aerial-01",
@@ -238,24 +274,6 @@
       "score": 85,
       "width": 1200,
       "height": 800
-    },
-    {
-      "id": "property-walk-01",
-      "type": "video",
-      "src": "/media/images/hero-estate-01.jpeg",
-      "videoSrc": "/media/videos/property-walk-01.mp4",
-      "title": "Property Walk 01",
-      "alt": "Vidhaan Farm House video — Property Walk 01",
-      "tags": [
-        "videos",
-        "garden",
-        "estate"
-      ],
-      "gallery": "videos",
-      "featured": false,
-      "score": 85,
-      "width": 1920,
-      "height": 1080
     },
     {
       "id": "garden-estate-01",
@@ -583,7 +601,7 @@
     }
   ],
   "hero": {
-    "video": "/media/videos/estate-tour-01.mp4",
+    "video": "/media/videos/event-highlights-01.mp4",
     "poster": "/media/images/hero-estate-01.jpeg",
     "image": "/media/images/hero-estate-01.jpeg"
   }

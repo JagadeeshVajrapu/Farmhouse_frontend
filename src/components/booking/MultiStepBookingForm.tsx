@@ -1,6 +1,7 @@
 'use client';
 
 import { useState } from 'react';
+import Link from 'next/link';
 import { useRouter } from 'next/navigation';
 import { useForm, Controller } from 'react-hook-form';
 import { zodResolver } from '@hookform/resolvers/zod';
@@ -522,8 +523,14 @@ export function MultiStepBookingForm({
                   />
                   <span className="text-sm text-muted-foreground">
                     I agree to the{' '}
-                    <span className="text-gold">terms & conditions</span> and cancellation policy.
-                    I understand my booking is subject to availability confirmation.
+                    <Link href="/terms" className="text-gold hover:underline">
+                      terms &amp; conditions
+                    </Link>{' '}
+                    and{' '}
+                    <Link href="/refund" className="text-gold hover:underline">
+                      refund policy
+                    </Link>
+                    . I understand my booking is subject to availability confirmation.
                   </span>
                 </label>
                 {errors.agreeToTerms && (

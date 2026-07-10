@@ -19,7 +19,7 @@ export const siteConfig = {
 export const contactConfig = {
   phone: '+91 84477 90095',
   email: 'vidhaanfarms@gmail.com',
-  address: 'Vidhaan Farm House, Chhatarpur, New Delhi',
+  address: 'Noida Sector-134, Uttar Pradesh-201304',
   whatsapp: '+918447790095',
   brandName: 'Vidhaan Farm House',
   workingHours: '9:00 AM – 9:00 PM',

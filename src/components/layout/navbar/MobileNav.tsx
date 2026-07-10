@@ -48,13 +48,14 @@ export function MobileNav({ isOpen, onClose }: MobileNavProps) {
             onClick={onClose}
           />
 
-          {/* Panel */}
+          {/* Panel — slides in from the right */}
           <motion.div
             initial={{ x: '100%' }}
             animate={{ x: 0 }}
             exit={{ x: '100%' }}
             transition={{ type: 'spring', stiffness: 300, damping: 32 }}
-            className="fixed inset-y-0 right-0 z-[70] flex w-full max-w-sm flex-col border-l border-gold/10 bg-[#0a0a0a]/98 backdrop-blur-2xl lg:hidden"
+            className="fixed inset-y-0 right-0 left-auto z-[70] flex w-[min(100vw,20rem)] max-w-sm flex-col border-l border-gold/10 bg-[#0a0a0a]/98 backdrop-blur-2xl lg:hidden"
+            style={{ paddingTop: 'env(safe-area-inset-top)', paddingBottom: 'env(safe-area-inset-bottom)' }}
           >
             {/* Header */}
             <div className="flex items-center justify-between border-b border-gold/10 px-6 py-5">

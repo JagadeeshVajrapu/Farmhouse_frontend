@@ -17,12 +17,26 @@ const pick = (tag: string) => {
 export const HERO_VIDEO = HERO_MEDIA.video ?? '/media/videos/estate-tour-01.mp4';
 export const HERO_POSTER = HERO_MEDIA.poster;
 
-/** Unique hero slideshow images (no video) */
-export const HERO_SLIDES = pickImages('hero', 3, used)
-  .concat(pickImages('pool', 3, used))
-  .concat(pickImages('garden', 2, used))
-  .filter((src, i, arr) => arr.indexOf(src) === i)
-  .slice(0, 6);
+/** Homepage virtual tour — primary full-length film */
+export const VIDEO_TOUR_URL = '/media/videos/event-highlights-01.mp4';
+export const VIDEO_TOUR_POSTER = '/media/images/pool-party-01.jpeg';
+
+/** Preferred order for customer-facing video tours */
+export const HOME_VIDEO_ORDER = [
+  'event-highlights-01',
+  'property-walk-01',
+  'pool-tour-01',
+  'estate-tour-01',
+] as const;
+
+/** Unique hero slideshow images (no video) — entrance first, then estate highlights */
+export const HERO_SLIDES = [
+  '/media/images/entrance-gate-02.png',
+  ...pickImages('hero', 3, used)
+    .concat(pickImages('pool', 3, used))
+    .concat(pickImages('garden', 2, used))
+    .filter((src, i, arr) => arr.indexOf(src) === i),
+].slice(0, 7);
 
 export const STATS = [
   { value: 50, suffix: '+', label: 'Acres of Estate' },
@@ -152,8 +166,6 @@ export const FAQ_ITEMS = [
       'Selected residences welcome pets with prior approval. A pet concierge service including grooming and walking is available on request.',
   },
 ];
-
-export const VIDEO_TOUR_URL = HERO_VIDEO;
 
 /** Homepage featured slider — images only (videos share poster URLs) */
 const seenFeaturedSrc = new Set<string>();

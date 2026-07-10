@@ -29,7 +29,7 @@ export function ContactMap() {
               Visit Vidhaan Farm House
             </h2>
             <p className="mt-3 max-w-md text-sm text-[#0F172A]/60 dark:text-muted-foreground">
-              {contactConfig.address} — nestled in Chhatarpur, just 45 minutes from Delhi IGI Airport.
+              {contactConfig.address}
             </p>
           </div>
           <Link

@@ -161,12 +161,18 @@ export function Footer() {
               </a>
             </p>
 
-            <div className="flex items-center justify-center gap-6 md:justify-end">
+            <div className="flex flex-wrap items-center justify-center gap-x-5 gap-y-2 md:justify-end">
               <Link href="/privacy" className="text-xs text-muted-foreground hover:text-gold">
                 Privacy
               </Link>
               <Link href="/terms" className="text-xs text-muted-foreground hover:text-gold">
                 Terms
+              </Link>
+              <Link href="/refund" className="text-xs text-muted-foreground hover:text-gold">
+                Refund
+              </Link>
+              <Link href="/disclaimer" className="text-xs text-muted-foreground hover:text-gold">
+                Disclaimer
               </Link>
               <a
                 href="#"

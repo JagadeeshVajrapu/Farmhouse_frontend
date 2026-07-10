@@ -4,12 +4,21 @@ import { useState } from 'react';
 import Image from 'next/image';
 import { motion } from 'framer-motion';
 import { Play, X } from 'lucide-react';
-import { getVideos } from '@/lib/media/registry';
+import { getVideos, type MediaItem } from '@/lib/media/registry';
+import { HOME_VIDEO_ORDER } from '@/lib/home-data';
 import { SectionHeading } from '@/components/ui/section-heading';
 import { SectionReveal } from '@/components/home/SectionReveal';
 
+function sortVideos(videos: MediaItem[]): MediaItem[] {
+  return [...videos].sort(
+    (a, b) =>
+      HOME_VIDEO_ORDER.indexOf(a.id as (typeof HOME_VIDEO_ORDER)[number]) -
+      HOME_VIDEO_ORDER.indexOf(b.id as (typeof HOME_VIDEO_ORDER)[number])
+  );
+}
+
 export function VideoGallerySection() {
-  const videos = getVideos();
+  const videos = sortVideos(getVideos());
   const [activeVideo, setActiveVideo] = useState<(typeof videos)[0] | null>(null);
 
   return (

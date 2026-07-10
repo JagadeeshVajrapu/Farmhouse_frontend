@@ -93,12 +93,12 @@ export function Navbar() {
           style={{ originX: 0.5 }}
         />
 
-        <div className="mx-auto grid h-20 max-w-7xl grid-cols-[auto_1fr_auto] items-center gap-3 px-4 sm:gap-4 sm:px-6 lg:px-8">
+        <div className="mx-auto flex h-20 max-w-7xl items-center justify-between gap-3 px-4 sm:px-6 lg:grid lg:grid-cols-[auto_1fr_auto] lg:gap-4 lg:px-8">
           {/* Logo */}
           <NavbarLogo className="min-w-0 shrink-0" />
 
           {/* Desktop Navigation — Home is the logo; omit here to avoid overlap */}
-          <nav className="hidden min-w-0 items-center justify-center gap-2 xl:gap-4 2xl:gap-5 lg:flex">
+          <nav className="hidden min-w-0 items-center justify-center gap-2 lg:flex xl:gap-4 2xl:gap-5">
             {navigation
               .filter((link) => link.href !== '/')
               .map((link) => (
@@ -152,8 +152,8 @@ export function Navbar() {
             </LuxuryButton>
           </div>
 
-          {/* Mobile toggle */}
-          <div className="flex items-center gap-2.5 lg:hidden">
+          {/* Mobile toggle — always aligned to the right */}
+          <div className="flex shrink-0 items-center justify-end gap-2.5 lg:hidden">
             <WhatsAppButton className="h-11 w-11" />
             <button
               onClick={() => setIsMobileOpen(true)}
