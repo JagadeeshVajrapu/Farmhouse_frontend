@@ -3,7 +3,7 @@ export const siteConfig = {
   tagline: 'Where Luxury Meets Nature',
   description:
     'Experience unparalleled luxury at Vidhaan Farm House — a premium estate retreat offering world-class accommodations, bespoke experiences, and timeless elegance.',
-  url: process.env.NEXT_PUBLIC_SITE_URL || 'http://localhost:3000',
+  url: process.env.NEXT_PUBLIC_SITE_URL ?? '',
   ogImage: '/og-image.jpg',
   creator: 'Vidhaan Farm House',
   keywords: [

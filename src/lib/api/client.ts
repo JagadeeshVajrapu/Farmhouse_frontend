@@ -1,5 +1,4 @@
 import axios, { type AxiosError, type InternalAxiosRequestConfig } from 'axios';
-import { env } from '@/config/env';
 
 /** Token storage key */
 export const TOKEN_KEY = 'vidhaan_auth_token';
@@ -8,7 +7,7 @@ export const TOKEN_KEY = 'vidhaan_auth_token';
  * Axios instance configured for Vidhaan Farm House API
  */
 export const apiClient = axios.create({
-  baseURL: env.apiUrl,
+  baseURL: process.env.NEXT_PUBLIC_API_URL,
   withCredentials: true,
   timeout: 30000,
   headers: {
