@@ -4,7 +4,6 @@ import { useRef } from 'react';
 import { motion, useInView } from 'framer-motion';
 import { Navigation } from 'lucide-react';
 import Link from 'next/link';
-import { CONTACT_PAGE } from '@/lib/contact-data';
 import { contactConfig } from '@/config/site';
 import { LuxuryButton } from '@/components/ui/luxury-button';
 
@@ -42,25 +41,6 @@ export function ContactMap() {
               Get Directions
             </LuxuryButton>
           </Link>
-        </motion.div>
-
-        <motion.div
-          initial={{ opacity: 0, y: 32 }}
-          animate={isInView ? { opacity: 1, y: 0 } : {}}
-          transition={{ duration: 0.7, delay: 0.15 }}
-          className="relative overflow-hidden rounded-3xl shadow-[0_24px_80px_rgba(15,23,42,0.12)] ring-1 ring-[#0F172A]/5"
-        >
-          <div className="absolute inset-0 z-10 pointer-events-none rounded-3xl ring-1 ring-inset ring-[#C9A227]/10" />
-          <div className="relative aspect-[16/9] min-h-[360px] lg:aspect-[21/9]">
-            <iframe
-              title="Vidhaan Farm House location on Google Maps"
-              src={CONTACT_PAGE.mapEmbedUrl}
-              className="absolute inset-0 h-full w-full border-0 grayscale-[20%] contrast-[95%]"
-              loading="lazy"
-              referrerPolicy="no-referrer-when-downgrade"
-              allowFullScreen
-            />
-          </div>
         </motion.div>
       </div>
     </section>

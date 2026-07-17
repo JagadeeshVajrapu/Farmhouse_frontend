@@ -9,8 +9,6 @@ export const CONTACT_PAGE = {
     "Whether you're planning a pool party, birthday celebration, family gathering, or weekend stay, our team is here to help.",
   banner: pickImage('hero'),
   workingHours: contactConfig.workingHours,
-  mapEmbedUrl:
-    'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3504.123456789!2d77.1751!3d28.4962!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390d1f42b89e5c8b%3A0x1!2sChhatarpur%2C%20New%20Delhi!5e0!3m2!1sen!2sin!4v1700000000000',
 };
 
 export const CONTACT_CARDS = [

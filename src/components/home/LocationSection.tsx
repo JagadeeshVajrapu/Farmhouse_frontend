@@ -21,8 +21,8 @@ export function LocationSection() {
           />
         </SectionReveal>
 
-        <div className="mt-16 grid gap-8 lg:grid-cols-5">
-          <SectionReveal delay={0.1} className="lg:col-span-2">
+        <div className="mt-16">
+          <SectionReveal delay={0.1}>
             <div className="space-y-6">
               {[
                 { icon: MapPin, label: 'Address', value: contactConfig.address },
@@ -62,18 +62,6 @@ export function LocationSection() {
                   Get Directions
                 </LuxuryButton>
               </a>
-            </div>
-          </SectionReveal>
-
-          <SectionReveal delay={0.2} className="lg:col-span-3">
-            <div className="relative aspect-[4/3] overflow-hidden rounded-2xl border border-gold/15 lg:aspect-auto lg:h-full lg:min-h-[400px]">
-              <iframe
-                title="Vidhaan Farm House Location"
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3504.123456789!2d77.1751!3d28.4962!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390d1f42b89e5c8b%3A0x1!2sChhatarpur%2C%20New%20Delhi!5e0!3m2!1sen!2sin!4v1700000000000"
-                className="absolute inset-0 h-full w-full border-0 grayscale-[30%] invert-[90%] contrast-[90%]"
-                loading="lazy"
-                referrerPolicy="no-referrer-when-downgrade"
-              />
             </div>
           </SectionReveal>
         </div>
