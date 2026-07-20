@@ -191,10 +191,11 @@ export const TESTIMONIALS_BG = pick('night');
 export const CTA_BACKGROUND = pickImage('garden', used);
 
 export const LOCATION = {
-  lat: 28.4962,
-  lng: 77.1751,
+  lat: 28.4957623,
+  lng: 77.3814361,
+  mapsUrl: 'https://maps.app.goo.gl/WCx9PfMCVqbsh5xj8',
   embedUrl:
-    'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3504.0!2d77.1751!3d28.4962!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMjnCsDI5JzQ2LjMiTiA3N8KwMTAnMzAuNCJF!5e0!3m2!1sen!2sin!4v1234567890',
+    'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d700!2d77.3814361!3d28.4957623!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390ce912d9769327%3A0x6391251745cef6ea!2spartyonfarms!5e1!3m2!1sen!2sin!4v1710000000000!5m2!1sen!2sin',
 };
 
 export const GALLERY_PREVIEW_IMAGES = pickImages('estate', 8, used).map((src, i) => ({

@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-07-17T09:45:59.331Z",
+  "generatedAt": "2026-07-20T11:09:51.011Z",
   "version": 1,
   "items": [
     {
@@ -25,6 +25,23 @@
       "src": "/media/images/hero-estate-02.jpeg",
       "title": "Hero Estate 02",
       "alt": "Vidhaan Farm House — Hero Estate 02",
+      "tags": [
+        "hero",
+        "estate",
+        "garden"
+      ],
+      "gallery": "garden",
+      "featured": true,
+      "score": 100,
+      "width": 1200,
+      "height": 800
+    },
+    {
+      "id": "hero-estate-03",
+      "type": "image",
+      "src": "/media/images/hero-estate-03.jpeg",
+      "title": "Hero Estate 03",
+      "alt": "Vidhaan Farm House — Hero Estate 03",
       "tags": [
         "hero",
         "estate",
@@ -122,6 +139,40 @@
       "height": 800
     },
     {
+      "id": "pool-villa-04",
+      "type": "image",
+      "src": "/media/images/pool-villa-04.jpeg",
+      "title": "Pool Villa 04",
+      "alt": "Vidhaan Farm House — Pool Villa 04",
+      "tags": [
+        "pool",
+        "estate"
+      ],
+      "gallery": "pool",
+      "featured": true,
+      "score": 95,
+      "width": 1200,
+      "height": 800
+    },
+    {
+      "id": "entrance-directions-01",
+      "type": "image",
+      "src": "/media/images/entrance-directions-01.jpeg",
+      "title": "Main Pusta Road Entrance Directions",
+      "alt": "Vidhaan Farm House — Entrance Directions 01",
+      "tags": [
+        "entrance",
+        "directions",
+        "parking",
+        "location"
+      ],
+      "gallery": "garden",
+      "featured": true,
+      "score": 94,
+      "width": 1200,
+      "height": 800
+    },
+    {
       "id": "property-walk-01",
       "type": "video",
       "src": "/media/images/lawn-01.jpeg",
@@ -175,6 +226,42 @@
       "height": 800
     },
     {
+      "id": "night-event-02",
+      "type": "image",
+      "src": "/media/images/night-event-02.jpeg",
+      "title": "Night Event 02",
+      "alt": "Vidhaan Farm House — Night Event 02",
+      "tags": [
+        "night",
+        "events",
+        "decoration",
+        "lawn"
+      ],
+      "gallery": "night",
+      "featured": true,
+      "score": 92,
+      "width": 1200,
+      "height": 800
+    },
+    {
+      "id": "night-event-03",
+      "type": "image",
+      "src": "/media/images/night-event-03.jpeg",
+      "title": "Night Event 03",
+      "alt": "Vidhaan Farm House — Night Event 03",
+      "tags": [
+        "night",
+        "events",
+        "decoration",
+        "lawn"
+      ],
+      "gallery": "night",
+      "featured": true,
+      "score": 92,
+      "width": 1200,
+      "height": 800
+    },
+    {
       "id": "pool-tour-01",
       "type": "video",
       "src": "/media/images/pool-villa-01.jpeg",
@@ -197,6 +284,22 @@
       "src": "/media/images/pool-premium-01.jpeg",
       "title": "Pool Premium 01",
       "alt": "Vidhaan Farm House — Pool Premium 01",
+      "tags": [
+        "pool",
+        "outdoor-seating"
+      ],
+      "gallery": "pool",
+      "featured": true,
+      "score": 90,
+      "width": 1200,
+      "height": 800
+    },
+    {
+      "id": "pool-premium-02",
+      "type": "image",
+      "src": "/media/images/pool-premium-02.jpeg",
+      "title": "Pool Premium 02",
+      "alt": "Vidhaan Farm House — Pool Premium 02",
       "tags": [
         "pool",
         "outdoor-seating"
@@ -244,6 +347,40 @@
       "height": 800
     },
     {
+      "id": "pool-party-02",
+      "type": "image",
+      "src": "/media/images/pool-party-02.jpeg",
+      "title": "Pool Party 02",
+      "alt": "Vidhaan Farm House — Pool Party 02",
+      "tags": [
+        "pool",
+        "party",
+        "birthday"
+      ],
+      "gallery": "party",
+      "featured": true,
+      "score": 88,
+      "width": 1200,
+      "height": 800
+    },
+    {
+      "id": "pool-party-03",
+      "type": "image",
+      "src": "/media/images/pool-party-03.jpeg",
+      "title": "Pool Party 03",
+      "alt": "Vidhaan Farm House — Pool Party 03",
+      "tags": [
+        "pool",
+        "party",
+        "birthday"
+      ],
+      "gallery": "party",
+      "featured": true,
+      "score": 88,
+      "width": 1200,
+      "height": 800
+    },
+    {
       "id": "lawn-aerial-01",
       "type": "image",
       "src": "/media/images/lawn-aerial-01.jpeg",
@@ -272,6 +409,24 @@
       "gallery": "pool",
       "featured": false,
       "score": 85,
+      "width": 1200,
+      "height": 800
+    },
+    {
+      "id": "lawn-dining-01",
+      "type": "image",
+      "src": "/media/images/lawn-dining-01.jpeg",
+      "title": "Lawn Dining 01",
+      "alt": "Vidhaan Farm House — Lawn Dining 01",
+      "tags": [
+        "lawn",
+        "events",
+        "party",
+        "food"
+      ],
+      "gallery": "events",
+      "featured": true,
+      "score": 84,
       "width": 1200,
       "height": 800
     },
@@ -423,6 +578,36 @@
       "src": "/media/images/room-bedroom-04.jpeg",
       "title": "Room Bedroom 04",
       "alt": "Vidhaan Farm House — Room Bedroom 04",
+      "tags": [
+        "rooms"
+      ],
+      "gallery": "rooms",
+      "featured": false,
+      "score": 78,
+      "width": 1200,
+      "height": 800
+    },
+    {
+      "id": "room-bedroom-05",
+      "type": "image",
+      "src": "/media/images/room-bedroom-05.jpeg",
+      "title": "Room Bedroom 05",
+      "alt": "Vidhaan Farm House — Room Bedroom 05",
+      "tags": [
+        "rooms"
+      ],
+      "gallery": "rooms",
+      "featured": false,
+      "score": 78,
+      "width": 1200,
+      "height": 800
+    },
+    {
+      "id": "room-bedroom-06",
+      "type": "image",
+      "src": "/media/images/room-bedroom-06.jpeg",
+      "title": "Room Bedroom 06",
+      "alt": "Vidhaan Farm House — Room Bedroom 06",
       "tags": [
         "rooms"
       ],

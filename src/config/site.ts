@@ -19,10 +19,15 @@ export const siteConfig = {
 export const contactConfig = {
   phone: '+91 84477 90095',
   email: 'vidhaanfarms@gmail.com',
-  address: 'Noida Sector-134, Uttar Pradesh-201304',
+  address: 'Noida Sector-135, Uttar Pradesh-201304',
   whatsapp: '+918447790095',
   brandName: 'Vidhaan Farm House',
   workingHours: '9:00 AM – 9:00 PM',
+  /** Google Maps place link — opens this exact location */
+  mapsUrl: 'https://maps.app.goo.gl/WCx9PfMCVqbsh5xj8',
+  /** Same place as mapsUrl (partyonfarms / Sector-135 pin) */
+  mapEmbedUrl:
+    'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d700!2d77.3814361!3d28.4957623!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390ce912d9769327%3A0x6391251745cef6ea!2spartyonfarms!5e1!3m2!1sen!2sin!4v1710000000000!5m2!1sen!2sin',
 } as const;
 
 export const socialConfig = {

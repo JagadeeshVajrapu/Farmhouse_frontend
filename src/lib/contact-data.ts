@@ -9,6 +9,10 @@ export const CONTACT_PAGE = {
     "Whether you're planning a pool party, birthday celebration, family gathering, or weekend stay, our team is here to help.",
   banner: pickImage('hero'),
   workingHours: contactConfig.workingHours,
+  mapEmbedUrl: contactConfig.mapEmbedUrl,
+  mapsUrl: contactConfig.mapsUrl,
+  /** Property entrance photo (not the phone Street View screenshot) */
+  directionsImage: '/media/images/entrance-gate-02.png',
 };
 
 export const CONTACT_CARDS = [
@@ -49,8 +53,8 @@ export const CONTACT_CARDS = [
     id: 'location',
     label: 'Location',
     value: contactConfig.address,
-    href: `https://maps.google.com/?q=${encodeURIComponent(contactConfig.address)}`,
-    description: 'Noida Sector-134, Uttar Pradesh',
+    href: contactConfig.mapsUrl,
+    description: 'Noida Sector-135, Uttar Pradesh',
   },
 ] as const;
 
